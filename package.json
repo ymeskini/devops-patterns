@@ -2,16 +2,15 @@
   "name": "devops",
   "version": "1.0.0",
   "description": "DevOps Infra Patterns",
+  "type": "module",
   "scripts": {
-    "cdk": "cdk",
-    "cdk:diff": "cdk diff",
-    "cdk:deploy": "cdk deploy",
-    "cdk:synth": "cdk synth"
+    "aws": "node --import @swc-node/register/esm-register ./IaC/bin/cdk.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cdktf/provider-aws": "^19.34.0",
     "@cdktf/provider-docker": "^11.0.0",
     "aws-cdk": "^2.160.0",
     "aws-cdk-lib": "^2.160.0",
@@ -19,7 +18,8 @@
     "constructs": "^10.3.0"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2",
+    "@swc-node/register": "^1.10.9",
+    "@swc/cli": "^0.4.1-nightly.20240914",
     "typescript": "^5.6.2"
   }
 }
